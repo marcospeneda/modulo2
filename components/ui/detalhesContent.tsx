@@ -19,8 +19,25 @@ export default function detalhesContent() {
 
         <FlatList
         data = {dados} //fonte de dados//
-    
+        keyExtractor={(item) => item.id} //define a chave unica para cada item//
+        renderItem={({item})=>(){ //cada item da lista é renderizado com uma view estilizada//
+        <View style = {styles.item}>
+            <Text>{item.descricao}</Text>
+        </View>
+        }}
+        />
+
     )
+
+    // estilizacao dos componentes//
+    const styles = StyleSheet.create ({
+        //estilo do container principal//
+        container:{paddingBottom: 10, },
+        //estilo do titulo// 
+        title: {fontWeight: 'bold', fontSize: 18, marginBottom: 10, alignSelf: 'center'},
+        //estilo de cada item da lista//
+        item: {backgroundColor: 'grey', padding: 10, marginVertical: 5, borderRadius: 6}
+    })
    
     
 
