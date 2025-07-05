@@ -32,7 +32,7 @@ import DetalhesContent from "@/components/ui/DetalhesContent";
 import { router } from "expo-router";
 
 export default function App() {
-  const [modalVisible, setModalVisible] = useState(false); // estado do modal (aberto/fechado)
+  const [modalVisible, setModalVisible] = useState(false); // Estado do modal (aberto/fechado)
 
   return (
     <SafeAreaView style={styles.container}>
