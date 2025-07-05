@@ -1,5 +1,6 @@
 // Importa o hook useState para gerenciar estado no componente.
 // O que é estado? É, por exemplo, se algo está aberto ou fechado, visível ou oculto, etc.
+import { router } from 'expo-router';
 import React from 'react';
 import { useState } from 'react';
 import {
@@ -65,7 +66,7 @@ export default function Modulo4() {
                 placeholder="Digite sua mensagem"
                 value={mensagem}
                 onChangeText={setMensagem}
-                style={styles.input}
+                style={styles.input} 
                 multiline // Permite várias linhas de texto. //
             />
 
@@ -81,14 +82,14 @@ export default function Modulo4() {
                 <Text style={styles.success} >Mensagem enviada com sucesso ! </Text>
             )}
             
-            <Pressable style={styles.button}>
+            <Pressable onPress={()=>router.push('/')} style={styles.button}>
                 <Text style={styles.buttonText}>Home</Text>
             </Pressable>
         </ScrollView>
     );
 }
 
-// Estilos da interface
+// Estilos da interface //
 const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
@@ -125,10 +126,10 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '70%',
-        borderWidth: 4,
-        borderColor: '#CCC',
+        borderWidth: 3,
+        borderColor: '#ccc',
         padding: 10,
-        borderRadius: 6,
+        borderRadius: 15,
         marginBottom: 10,
 
     },
